@@ -3,7 +3,6 @@ const express = require('express');
 const helmet = require('helmet');
 const cors = require('cors');
 const session = require('express-session');
-​
 const db = require('./models');
 const routes = require('./routes');
 const passport = require('./config/passport');
