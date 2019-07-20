@@ -17,11 +17,13 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
+// import Calendar from '../WeekCalendar';
 // import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // import Dashboard from "./pages/dashboard";
 // import Scheduler from "./pages/scheduler";
 // import Clients from "./pages/clients";
 
+import Calendar from '../Calendar/Calendar';
 
 const drawerWidth = 240;
 
@@ -157,6 +159,7 @@ export default function SideNav() {
         })}
       >
         <div className={classes.drawerHeader} />
+        < Calendar />
       </main>
     </div>
   );

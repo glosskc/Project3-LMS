@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Calendar from './components/Calendar/Calendar';
 import SideNav from './components/sideNav/sideNav'
 import './App.css';
 
@@ -8,7 +7,6 @@ class App extends Component {
     return (
       <div className="App">
         < SideNav />
-        < Calendar />
       </div>
     )
   }
