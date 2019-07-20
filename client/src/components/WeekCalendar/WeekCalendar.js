@@ -6,12 +6,13 @@ import {
   WeekView,
   Appointments,
   Toolbar,
-  ViewSwitcher
+  ViewSwitcher,
+  DateNavigator,
 } from '@devexpress/dx-react-scheduler-material-ui';
 
 import { appointments } from '../../Data/data';
 
-export default class Calendar extends React.PureComponent {
+export default class WeekCalendar extends React.PureComponent {
   constructor(props) {
     super(props);
 
@@ -51,6 +52,7 @@ export default class Calendar extends React.PureComponent {
             endDayHour={19}
           />
           <Toolbar />
+          <DateNavigator />
           <ViewSwitcher />
           <Appointments />
         </Scheduler>
