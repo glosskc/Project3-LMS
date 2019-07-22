@@ -6,7 +6,7 @@ import {
   WeekView,
   Appointments,
   Toolbar,
-  ViewSwitcher,
+  ViewSwitcher, 
   DateNavigator,
 } from '@devexpress/dx-react-scheduler-material-ui';
 
