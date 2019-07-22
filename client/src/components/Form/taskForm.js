@@ -19,7 +19,7 @@ class TaskForm extends Component {
 //   add client name to the fields
   render() {
 
-    const { fields: {taskName, description, startDate, dueDate}, handleSubmit } = this.props;
+    const { fields: {clientName, taskName, address, startDate, endDate, notes}, handleSubmit } = this.props;
 
     const styles = {
       listPadding: {
@@ -35,14 +35,19 @@ class TaskForm extends Component {
     return (
       <form className="form-group" style={styles.formStyle} onSubmit={handleSubmit(this.onSubmit.bind(this))}>
         <TextField
+          floatingLabelText="Client Name"
+          style={styles.inputFields}
+          {...clientName}
+        /><br />
+        <TextField
           floatingLabelText="Task Name"
           style={styles.inputFields}
           {...taskName}
         /><br />
         <TextField
-          floatingLabelText="Description"
+          floatingLabelText="Address"
           style={styles.inputFields}
-          {...description}
+          {...address}
         /><br />
         <TextField
           floatingLabelText="Start Date"
@@ -50,9 +55,14 @@ class TaskForm extends Component {
           {...startDate}
         /><br />
         <TextField
-          floatingLabelText="Due Date"
+          floatingLabelText="End Date"
           style={styles.inputFields}
-          {...dueDate}
+          {...endDate}
+        /><br />
+        <TextField
+          floatingLabelText="Notes"
+          style={styles.inputFields}
+          {...notes}
         /><br />
       <RaisedButton label="Submit" style={styles.submitButton} onMouseDown={handleSubmit(this.onSubmit.bind(this))} />
 
@@ -63,5 +73,5 @@ class TaskForm extends Component {
 
 export default reduxForm({
   form: 'taskForm',
-  fields: ['taskName', 'description', 'startDate', 'dueDate']
+  fields: ['clientName','taskName', 'address', 'startDate', 'endDate', 'notes']
 }, null, { addTask })(TaskForm);
