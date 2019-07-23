@@ -37,13 +37,11 @@ class ClientList extends Component {
             return (
               <div style={styles.formStyle}>
                 <li key={client.id} style={styles.listItem}>
-                  <p>First name: {client.text.firstName}</p>
-                  <p>Last name: {client.text.lastName}</p>
-                  {/* <p>Occupation: {client.text.occupation}</p> */}
-                  {/* <p>Organization: {client.text.organization}</p> */}
+                  {/* <p>First name: {client.text.firstName}</p> */}
+                  <p>Client Name: {client.text.clientName}</p>
+                  <p>Task: {client.text.task}</p>
                   <p>Email: {client.text.email}</p>
                   <p>Phone: {client.text.phone}</p>
-                  {/* <p>Website: {client.text.website}</p> */}
                   <p>Address: {client.text.address}</p>
                   <p>Notes: {client.text.notes}</p>
                   <RaisedButton label="Remove" style={styles.submitButton} onMouseDown={() => this.props.removeClient(index)} />

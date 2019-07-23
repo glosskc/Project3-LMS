@@ -13,8 +13,9 @@ import LeftNav from 'material-ui/lib/left-nav';
 
 import ClientList from '../ClientList'
 import InputForm from '../containers/InputForm'
-import TaskForm from '../containers/TaskForm'
+import TaskForm from './taskForm'
 import TaskList from './TaskList'
+
 injectTapEventPlugin();
 
  class App extends Component {

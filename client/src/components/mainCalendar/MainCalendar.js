@@ -264,7 +264,7 @@ const styles = theme => ({
 });
 
 /* eslint-disable-next-line react/no-multi-comp */
-class Calendar extends React.PureComponent {
+class MainCalendar extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {
@@ -473,4 +473,4 @@ class Calendar extends React.PureComponent {
   }
 }
 
-export default withStyles(styles, { name: 'EditingDemo' })(Calendar);
+export default withStyles(styles, { name: 'EditingDemo' })(MainCalendar);

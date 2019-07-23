@@ -116,7 +116,7 @@ export default function SideNav(props) {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap>
-            LMS Install
+            LMS Schedule
           </Typography>
         </Toolbar>
       </AppBar>
