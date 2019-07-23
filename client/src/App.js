@@ -1,43 +1,44 @@
-import React, { Component } from 'react';
+// import React, { Component } from 'react';
 // import SideNav from './components/sideNav/sideNav'
-import './App.css';
-import SignIn from './pages/SignIn';
+// import './App.css';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <SignIn />
-      </div>
-    )
-  }
-};
+// class App extends Component {
+//   render() {
+//     return (
+//       <div className="App">
+//         < SideNav />
+//       </div>
+//     )
+//   }
+// };
 
-export default App;
+// export default App;
 
-// import React from 'react';
-// import clsx from 'clsx';
-// import { makeStyles, useTheme } from '@material-ui/core/styles';
-// import Drawer from '@material-ui/core/Drawer';
-// import CssBaseline from '@material-ui/core/CssBaseline';
-// import AppBar from '@material-ui/core/AppBar';
-// import Toolbar from '@material-ui/core/Toolbar';
-// import List from '@material-ui/core/List';
-// import Typography from '@material-ui/core/Typography';
-// import Divider from '@material-ui/core/Divider';
-// import IconButton from '@material-ui/core/IconButton';
-// import MenuIcon from '@material-ui/icons/Menu';
-// import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-// import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-// import ListItem from '@material-ui/core/ListItem';
-// import ListItemIcon from '@material-ui/core/ListItemIcon';
-// import ListItemText from '@material-ui/core/ListItemText';
-// import InboxIcon from '@material-ui/icons/MoveToInbox';
-// import MailIcon from '@material-ui/icons/Mail';
-// import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-// import Dashboard from "./pages/dashboard";
+import React from 'react';
+import clsx from 'clsx';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
+import Drawer from '@material-ui/core/Drawer';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import List from '@material-ui/core/List';
+import Typography from '@material-ui/core/Typography';
+import Divider from '@material-ui/core/Divider';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
+import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
+import ChevronRightIcon from '@material-ui/icons/ChevronRight';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
+import InboxIcon from '@material-ui/icons/MoveToInbox';
+import MailIcon from '@material-ui/icons/Mail';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Dashboard from "./pages/dashboard";
 // import Scheduler from "./pages/scheduler";
 // import Clients from "./pages/clients";
+import MainCalendar from './pages/MainCalendar';
+import SideNav from './components/sideNav';
 
 
 // const drawerWidth = 240;
@@ -98,20 +99,20 @@ export default App;
 //   },
 // }));
 
-// export default function App() {
-//   const classes = useStyles();
-//   const theme = useTheme();
-//   const [open, setOpen] = React.useState(false);
+export default function App() {
+  // const classes = useStyles();
+  // const theme = useTheme();
+  // const [open, setOpen] = React.useState(false);
 
-//   function handleDrawerOpen() {
-//     setOpen(true);
-//   }
+  // function handleDrawerOpen() {
+  //   setOpen(true);
+  // }
 
-//   function handleDrawerClose() {
-//     setOpen(false);
-//   }
+  // function handleDrawerClose() {
+  //   setOpen(false);
+  // }
 
-//   return (
+  return (
 //     <div className={classes.root}>
 //       <CssBaseline />
 //       <AppBar
@@ -180,9 +181,9 @@ export default App;
         
 //         <Switch>
 //           <Route exact path="/" component={Dashboard} />
-//           <Route exact path="/scheduler" component={Scheduler} />
-//           <Route exact path="/clients" component={Clients} />
-//           {/* <Route exact path="/clients/:id" {Deatils} /> */}
+//           <Route exact path="/calendar" component={Calendar} />
+//           {/* <Route exact path="/clients" component={Clients} /> */}
+//           {/* <Route exact path="/clients/:id" {Deatils} /> */} */}
 //         </Switch>
 //       </div>
 //     </Router>
@@ -199,19 +200,19 @@ export default App;
 // import PersistentDrawerLeft from "./components/sideNav";
 
 // function App() {
-//   return (
-//     <Router>
-//       <div>
-//         <PersistentDrawerLeft />
-//         <Switch>
-//           <Route exact path="/" component={Dashboard} />
-//           <Route exact path="/scheduler" component={Scheduler} />
-//           <Route exact path="/clients" component={Clients} />
-//           {/* <Route exact path="/clients/:id" {Deatils} /> */}
-//         </Switch>
-//       </div>
-//     </Router>
-//   );
-// }
+  // return (
+  <SideNav>
+    <Router>
+        <Switch>
+          <Route exact path="/" component={Dashboard} />
+          <Route exact path="/calendar" component={MainCalendar} />
+          {/* <Route exact path="/clients" component={Clients} /> */}
+          {/* <Route exact path="/clients/:id" {Deatils} /> */}
+        </Switch>
+    </Router>
+  </SideNav>
+    
+  );
+}
 
 // export default App;

@@ -70,6 +70,6 @@ function mapDispatchToProps(dispatch){
 
   return bindActionCreators({ removeClient }, dispatch)
 }
-contact
+// contact
 
 export default connect(mapStateToProps, mapDispatchToProps)(ClientList);
