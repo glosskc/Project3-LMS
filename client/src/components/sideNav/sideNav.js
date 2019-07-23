@@ -23,7 +23,7 @@ import MailIcon from '@material-ui/icons/Mail';
 // import Scheduler from "./pages/scheduler";
 // import Clients from "./pages/clients";
 
-import Calendar from '../calendar/index';
+
 
 const drawerWidth = 240;
 

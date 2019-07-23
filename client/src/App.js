@@ -39,6 +39,7 @@ import Dashboard from "./pages/dashboard";
 // import Clients from "./pages/clients";
 import MainCalendar from './pages/MainCalendar';
 import SideNav from './components/sideNav';
+import SignInPage from './pages/SignIn';
 
 
 // const drawerWidth = 240;
@@ -206,7 +207,7 @@ export default function App() {
         <Switch>
           <Route exact path="/" component={Dashboard} />
           <Route exact path="/calendar" component={MainCalendar} />
-          {/* <Route exact path="/clients" component={Clients} /> */}
+          <Route exact path="/clients" component={SignInPage} />
           {/* <Route exact path="/clients/:id" {Deatils} /> */}
         </Switch>
     </Router>
