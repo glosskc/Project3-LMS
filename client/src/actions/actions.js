@@ -1,14 +1,14 @@
-export function addContact(text) {
+export function addClient(text) {
     return {
-      type: "ADD_CONTACT",
+      type: "ADD_CLIENT",
       text: text
     }
 }
 
-export function removeContact(id) {
+export function removeClient(id) {
     console.log("ID in actions.js", id)
     return {
-      type: "REMOVE_CONTACT",
+      type: "REMOVE_CLIENT",
       id: id
     }
 }
