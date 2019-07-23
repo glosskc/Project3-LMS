@@ -37,7 +37,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Dashboard from "./pages/dashboard";
 // import Scheduler from "./pages/scheduler";
 // import Clients from "./pages/clients";
-import Calendar from './components/calendar';
+import MainCalendar from './pages/MainCalendar';
 import SideNav from './components/sideNav';
 
 
@@ -205,7 +205,7 @@ export default function App() {
     <Router>
         <Switch>
           <Route exact path="/" component={Dashboard} />
-          <Route exact path="/calendar" component={Calendar} />
+          <Route exact path="/calendar" component={MainCalendar} />
           {/* <Route exact path="/clients" component={Clients} /> */}
           {/* <Route exact path="/clients/:id" {Deatils} /> */}
         </Switch>
