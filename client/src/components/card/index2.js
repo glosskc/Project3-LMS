@@ -19,10 +19,6 @@ import MoreVertIcon from '@material-ui/icons/MoreVert';
 const useStyles = makeStyles(theme => ({
   card: {
     maxWidth: 345,
-    position: "absolute",
-    objectFit: "hide",
-    zIndex: 1000,
-    
   },
   media: {
     height: 0,
@@ -33,15 +29,10 @@ const useStyles = makeStyles(theme => ({
     marginLeft: 'auto',
     transition: theme.transitions.create('transform', {
       duration: theme.transitions.duration.shortest,
-      objectFit: 'cover',
-      zIndex: 5,
     }),
   },
   expandOpen: {
     transform: 'rotate(180deg)',
-    objectFit: 'cover',
-    zIndex: 2,
-    
   },
   avatar: {
     backgroundColor: red[500],
@@ -70,13 +61,13 @@ export default function RecipeReviewCard() {
           </IconButton>
         }
         title="Client Information"
-        subheader=""
+        subheader="September 14, 2016"
       />
-      {/* <CardMedia
+      <CardMedia
         className={classes.media}
         image="/static/images/cards/paella.jpg"
         title="Paella dish"
-      /> */}
+      />
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
           This impressive paella is a perfect party dish and a fun meal to cook together with your

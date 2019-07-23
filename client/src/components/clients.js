@@ -6,7 +6,7 @@ import { Link } from 'react-router';
 import ClientList from './clientList'
 import InputForm from '../containers/InputForm'
 
-export default class Clients extends Component {
+class Clients extends Component {
   render() {
 
     const styles = {

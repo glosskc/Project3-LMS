@@ -23,7 +23,7 @@ import MailIcon from '@material-ui/icons/Mail';
 // import Scheduler from "./pages/scheduler";
 // import Clients from "./pages/clients";
 
-import Calendar from '../Calendar/Calendar';
+import Calendar from '../calendar/index';
 
 const drawerWidth = 240;
 
@@ -83,7 +83,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function SideNav() {
+export default function SideNav(props) {
   const classes = useStyles();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
@@ -159,7 +159,7 @@ export default function SideNav() {
         })}
       >
         <div className={classes.drawerHeader} />
-        < Calendar />
+        {props.children}
       </main>
     </div>
   );

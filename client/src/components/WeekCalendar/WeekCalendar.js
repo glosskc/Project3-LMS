@@ -4,6 +4,7 @@ import { ViewState } from '@devexpress/dx-react-scheduler';
 import {
   Scheduler,
   WeekView,
+  DayView,
   Appointments,
   Toolbar,
   ViewSwitcher
@@ -31,7 +32,7 @@ export default class Calendar extends React.PureComponent {
       <Paper>
         <Scheduler
           data={data}
-          height={660}
+          height={350}
         >
           <ViewState
             // defaultCurrentDate="2018-07-25"

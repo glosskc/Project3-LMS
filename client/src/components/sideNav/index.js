@@ -1,4 +1,4 @@
-export { default } from './SideNav';
+export { default } from './sideNav';
 
 // import React from 'react';
 // import clsx from 'clsx';
