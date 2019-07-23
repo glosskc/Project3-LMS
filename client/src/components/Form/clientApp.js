@@ -11,7 +11,14 @@ import ToolbarGroup from 'material-ui/lib/toolbar/toolbar-group';
 import ToolbarTitle from 'material-ui/lib/toolbar/toolbar-title';
 import LeftNav from 'material-ui/lib/left-nav';
 
-import ClientList from '../ClientList'
+
+
+
+// import ClientList from './clientList'
+import ClientList from './clientList'
+import InputForms from '../containers/InputForms'
+
+
 import InputForm from '../containers/InputForm'
 import TaskForm from './taskForm'
 import TaskList from './TaskList'
@@ -56,7 +63,7 @@ injectTapEventPlugin();
         <LeftNav open={this.props.open} style={styles.leftBar}>
           <MenuItem
             value={1}
-            primaryText="Contacts"
+            primaryText="Clients"
             linkButton
             containerElement={<Link to="/" />}
             style={styles.menuItem}
