@@ -19,7 +19,7 @@ class TaskForm extends Component {
 
   render() {
 
-    const { fields: {clientName, taskName, address, startDate, endDate, notes}, handleSubmit } = this.props;
+    const { fields: {clientName, taskName, location, startDate, endDate, notes}, handleSubmit } = this.props;
 
     const styles = {
       listPadding: {
@@ -45,16 +45,15 @@ class TaskForm extends Component {
           {...taskName}
         /><br />
         <TextField
-          floatingLabelText="Address"
+          floatingLabelText="Location"
           style={styles.inputFields}
-          {...address}
+          {...location}
         /><br />
         <TextField
           floatingLabelText="Start Date"
           style={styles.inputFields}
           {...startDate}
         /><br />
-        
         <TextField
           floatingLabelText="End Date"
           style={styles.inputFields}
@@ -74,5 +73,6 @@ class TaskForm extends Component {
 
 export default reduxForm({
   form: 'taskForm',
-  fields: ['clientName','taskName', 'address', 'startDate', 'endDate', 'notes']
+  fields: ['clientName', 'taskName', 'location', 'startDate', 'endDate', 'notes']
 }, null, { addTask })(TaskForm);
+

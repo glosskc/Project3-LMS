@@ -14,8 +14,9 @@ import LeftNav from 'material-ui/lib/left-nav';
 
 injectTapEventPlugin();
 
+// import ClientList from './clientList'
 import ClientList from './clientList'
-import InputForm from '../containers/InputForm'
+import InputForms from '../containers/InputForms'
 import TaskForm from './taskForm'
 import TaskList from './TaskList'
 
@@ -57,7 +58,7 @@ export default class App extends Component {
         <LeftNav open={this.props.open} style={styles.leftBar}>
           <MenuItem
             value={1}
-            primaryText="Contacts"
+            primaryText="Clients"
             linkButton
             containerElement={<Link to="/" />}
             style={styles.menuItem}
