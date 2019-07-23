@@ -32,13 +32,13 @@ export default function SignUpModal() {
         <DialogTitle id="form-dialog-title">Sign Up</DialogTitle>
         <DialogContent>
           <DialogContentText>
-            To sign up for an account with LMS Schedule, please enter an Email, and create a new UserName and PassWord here.
+            To sign up for an account with LMS Schedule, please give us an Email, and create a password here.
           </DialogContentText>
             <form noValidate autoComplete="off">
                <TextField
                     autoFocus
                     margin="normal"
-                    id="standard-email"
+                    id="email"
                     label="Email Address"
                     type="email"
                     fullWidth
@@ -47,17 +47,8 @@ export default function SignUpModal() {
                 <TextField
                     autofocus
                     margin="normal"
-                    id="standard-name"
-                    label="UserName"
-                    type="text"
-                    fullWidth
-                    required
-                />
-                <TextField
-                    autofocus
-                    margin="normal"
-                    id="standard-password-input"
-                    label="PassWord"
+                    id="password"
+                    label="Password"
                     type="text"
                     fullWidth
                     required
