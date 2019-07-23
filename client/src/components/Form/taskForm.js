@@ -16,7 +16,7 @@ class TaskForm extends Component {
     this.props.addTask(props)
   }
 
-//   add client name to the fields
+
   render() {
 
     const { fields: {clientName, taskName, address, startDate, endDate, notes}, handleSubmit } = this.props;
@@ -54,6 +54,7 @@ class TaskForm extends Component {
           style={styles.inputFields}
           {...startDate}
         /><br />
+        
         <TextField
           floatingLabelText="End Date"
           style={styles.inputFields}

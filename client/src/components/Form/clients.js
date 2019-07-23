@@ -31,7 +31,7 @@ export default class Clients extends Component {
       <div>
         <div className="container" style={styles.buttonPadding}>
             <div className="flex-item-app" style={styles.containerSpacing}>
-              <h2>Add a client</h2>
+              <h2>Add a Client</h2>
               <InputForm />
             </div>
             <div className="flex-item-app" style={styles.containerTwoSpacing}>
