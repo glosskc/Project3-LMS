@@ -40,7 +40,7 @@ import Create from '@material-ui/icons/Create';
 import { MuiThemeProvider, createMuiTheme } from "../../../node_modules/@material-ui/core/styles";
 import { blue } from "../../../node_modules/@material-ui/core/colors";
 
-import { appointments } from '../../Data/data';
+import { appointments } from '../Data/data';
 
 const theme = createMuiTheme({ palette: { type: "light", primary: blue } });
 
