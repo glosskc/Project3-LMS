@@ -3,7 +3,7 @@ import { Component } from 'react';
 import { connect } from 'react-redux'
 import { Link } from 'react-router';
 
-import TaskForm from './taskForm'
+import TaskForm from '../../containers/taskForm'
 import TaskList from './TaskList'
 // import TaskForm from '../containers/TaskForm'
 

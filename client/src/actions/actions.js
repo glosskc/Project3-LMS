@@ -13,7 +13,6 @@ export function removeClient(id) {
     }
 }
 
-
 export function addTask(text) {
     return {
       type: "ADD_TASK",

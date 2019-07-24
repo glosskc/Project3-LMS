@@ -20,7 +20,7 @@ import InputForms from '../containers/InputForms'
 
 
 import InputForm from '../containers/InputForm'
-import TaskForm from './taskForm'
+import TaskForm from '../../containers/taskForm'
 import TaskList from './TaskList'
 
 injectTapEventPlugin();
