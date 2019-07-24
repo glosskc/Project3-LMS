@@ -4,7 +4,6 @@ import { ViewState } from '@devexpress/dx-react-scheduler';
 import {
   Scheduler,
   WeekView,
-  DayView,
   Appointments,
   Toolbar,
   ViewSwitcher, 

@@ -37,8 +37,8 @@ import Close from '@material-ui/icons/Close';
 import CalendarToday from '@material-ui/icons/CalendarToday';
 import Create from '@material-ui/icons/Create';
 
-import { MuiThemeProvider, createMuiTheme } from "../../../node_modules/@material-ui/core/styles";
-import { blue } from "../../../node_modules/@material-ui/core/colors";
+import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+import { blue } from "@material-ui/core/colors";
 
 import { appointments } from '../Data/data';
 
