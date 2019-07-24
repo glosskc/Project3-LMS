@@ -37,7 +37,6 @@ class ClientList extends Component {
             return (
               <div style={styles.formStyle}>
                 <li key={client.id} style={styles.listItem}>
-                  {/* <p>First name: {client.text.firstName}</p> */}
                   <p>Client Name: {client.text.clientName}</p>
                   <p>Task: {client.text.task}</p>
                   <p>Email: {client.text.email}</p>
@@ -70,6 +69,5 @@ function mapDispatchToProps(dispatch){
 
   return bindActionCreators({ removeClient }, dispatch)
 }
-// contact
 
 export default connect(mapStateToProps, mapDispatchToProps)(ClientList);
