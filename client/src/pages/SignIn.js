@@ -1,5 +1,5 @@
 import React from 'react';
-import SignUpModal from '../components/signUpModal';
+import SignUpModal from '../components/Modal';
 
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
@@ -43,7 +43,7 @@ const useStyles = makeStyles(theme => ({
     },
   }));
 
-  export default function SignInPage() {
+  export default function SignIn() {
     const classes = useStyles();
   
     return (
