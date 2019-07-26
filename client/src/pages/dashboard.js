@@ -11,7 +11,8 @@ import RecipeReviewCard from "../components/card";
 import { Card, CardHeader, CardContent, CardActions, IconButton, List, ListItem, Avatar, ListItemText, Divider, Icons, ListItemIcon } from '@material-ui/core';
 import { mergeClasses } from "@material-ui/styles";
 import Table2 from '../components/table2';
-import Calendar from '../components/WeekCalendar'
+import Calendar from '../components/WeekCalendar';
+
 
 
 class Dashboard extends Component{
@@ -25,8 +26,7 @@ class Dashboard extends Component{
     
 
     componentDidMount(){
-        // this.loadClient();
-
+     
     };
 
     // loadClient = () => {
