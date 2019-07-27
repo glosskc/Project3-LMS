@@ -1,8 +1,8 @@
-var mongoose = require('mongoose');
-var passport = require('passport');
-var User = require('../models/User');
+const mongoose = require('mongoose');
+const passport = require('passport');
+const User = require('../models/User');
 
-var userController = {};
+const userController = {};
 
 userController.home = function(req, res) {
     res.render('index', )
@@ -28,5 +28,16 @@ userController.doRegister = function(req, res) {
 
 userController.login = function(req, res) {
     res.render('SignIn');
+};
+
+userController.doLogin = function(req, res) {
+    passport.authenticate('local')(req, res, function () {
+        res.direct('/app/dashboard');
+    });
+};
+
+userController.logout = function(req, res) {
+    req.logout();
+    res.redirect('/');
 };
 
