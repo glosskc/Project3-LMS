@@ -17,6 +17,24 @@ export default function SignUpModal() {
   function handleClose() {
     setOpen(false);
   }
+  
+//   state = {
+//    email: '',
+//    password: ''
+//    },
+
+//    handleInputChange = event => {
+//  const { name, value } = event.target;
+
+//    this.setState({
+//     [name]: value
+//    });
+//   };
+  
+//   handleFormSubmit = event => {
+//     event.preventDefault();
+//     this.setState({ email: ''});
+//   };
 
   return (
     <div>
@@ -41,6 +59,8 @@ export default function SignUpModal() {
                     id="email"
                     label="Email Address"
                     type="email"
+                    // value={this.state.email}
+                    // onChange={this.handleInputChange}
                     fullWidth
                     required
                 />
@@ -50,6 +70,8 @@ export default function SignUpModal() {
                     id="password"
                     label="Password"
                     type="text"
+                    // value={this.state.password}
+                    // onChange={this.handelInputChange}
                     fullWidth
                     required
                 />
