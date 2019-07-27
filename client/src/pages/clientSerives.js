@@ -70,7 +70,7 @@ function getStepContent(step) {
   }
 }
 
-export default function Checkout() {
+export default function ClientServices() {
   const classes = useStyles();
   const [activeStep, setActiveStep] = React.useState(0);
 
