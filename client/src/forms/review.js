@@ -7,7 +7,8 @@ import Step from '@material-ui/core/Step';
 import StepLabel from '@material-ui/core/StepLabel';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import AddressForm from '../forms/addressForm';
+import ClientForm from './clientForm';
+import TaskForm from './taskForm';
 import PaymentForm from '../forms/paymentForm';
 import Review from '../forms/review';
 
@@ -49,15 +50,17 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const steps = ['Shipping address', 'Payment details', 'Review your order'];
+const steps = ['Client', 'Task', 'Payment', 'Review'];
 
 function getStepContent(step) {
   switch (step) {
     case 0:
-      return <AddressForm />;
+      return <ClientForm />;
     case 1:
-      return <PaymentForm />;
+      return <TaskForm />;
     case 2:
+      return <PaymentForm />;
+    case 3:
       return <Review />;
     default:
       throw new Error('Unknown step');
