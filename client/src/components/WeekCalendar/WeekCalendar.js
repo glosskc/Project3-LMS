@@ -8,6 +8,7 @@ import {
   Toolbar,
   ViewSwitcher, 
   DateNavigator,
+  TodayButton
 } from '@devexpress/dx-react-scheduler-material-ui';
 
 import { appointments } from '../../Data/data';
@@ -53,6 +54,7 @@ export default class WeekCalendar extends React.PureComponent {
           />
           <Toolbar />
           <DateNavigator />
+          <TodayButton />
           <ViewSwitcher />
           <Appointments />
         </Scheduler>
