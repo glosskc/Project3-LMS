@@ -1,8 +1,8 @@
-var mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
-var Schema = mongoose.Schema;
+const Schema = mongoose.Schema;
 
-var taskSchema = new Schema ({
+const taskSchema = new Schema ({
     _clientId: {
         type: Schema.Types.ObjectId,
         ref: "Client"
@@ -28,6 +28,6 @@ var taskSchema = new Schema ({
     }
 });
 
-var Task = mongoose.model("Task", taskSchema);
+const Task = mongoose.model("Task", taskSchema);
 
 module.exports = Task;

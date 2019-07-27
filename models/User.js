@@ -1,8 +1,8 @@
-var mongoose = require("mongoose");
-var passportLocalMongoose = require('passort-local-mongoose');
-var Schema = mongoose.Schema;
+const mongoose = require("mongoose");
+const passportLocalMongoose = require('passort-local-mongoose');
+const Schema = mongoose.Schema;
 
-var UserSchema = new Schema({
+const UserSchema = new Schema({
     email: {
         type: String,
         unique: true,
