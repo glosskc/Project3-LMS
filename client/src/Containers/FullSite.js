@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-d
 import SideNav from '../components/sideNav';
 import Dashboard from "../pages/dashboard";
 import MainCalendar from '../pages/MainCalendar';
-import ClientServices from '../pages/clientSerives'
+import ClientServices from '../pages/clientServices'
 
 
 export default class FullSite extends Component {

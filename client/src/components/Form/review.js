@@ -5,12 +5,13 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Grid from '@material-ui/core/Grid';
+import TextField from '@material-ui/core/TextField';
 
-const Services = [
-  { name: 'Service 1', desc: 'Lawn Mowed', price: '$60.00' },
-  { name: 'Service 2', desc: 'Lawn Edged', price: '$10.00' },
-  { name: 'Service 3', desc: 'Gutters Cleaned', price: '$70.00' },
-];
+// const Services = [
+//   { name: 'Service 1', desc: 'Lawn Mowed', price: '$60.00' },
+//   { name: 'Service 2', desc: 'Lawn Edged', price: '$10.00' },
+//   { name: 'Service 3', desc: 'Gutters Cleaned', price: '$70.00' },
+// ];
 const addresses = ['1 Material-UI Drive', 'Reactville', 'Anytown', '99999', 'USA'];
 const payments = [
   { name: 'Card type', detail: 'Visa' },
@@ -39,24 +40,66 @@ export default function Review() {
       <Typography variant="h6" gutterBottom>
         Order summary
       </Typography>
-      <List disablePadding>
-        {Services.map(product => (
-          <ListItem className={classes.listItem} key={product.name}>
-            <ListItemText primary={product.name} secondary={product.desc} />
-            <Typography variant="body2">{product.price}</Typography>
-          </ListItem>
-        ))}
+      <Grid container spacing={3}>
+        <Grid item xs={12} md={6}>
+          <TextField 
+            id="service1" 
+            label="Name of Service" 
+            fullWidth 
+          />
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <TextField  
+            id="price" 
+            label="Price of Service" 
+            fullWidth 
+          />
+        </Grid>
+      </Grid>
+      <Grid container spacing={3}>
+        <Grid item xs={12} md={6}>
+          <TextField 
+            id="service1" 
+            label="Name of Service" 
+            fullWidth 
+          />
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <TextField  
+            id="price" 
+            label="Price of Service" 
+            fullWidth 
+          />
+        </Grid>
+      </Grid>
+      <Grid container spacing={3}>
+        <Grid item xs={12} md={6}>
+          <TextField 
+            id="service1" 
+            label="Name of Service" 
+            fullWidth 
+          />
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <TextField  
+            id="price" 
+            label="Price of Service" 
+            fullWidth 
+          />
+        </Grid>
+      </Grid>
+      <List>
         <ListItem className={classes.listItem}>
           <ListItemText primary="Total" />
           <Typography variant="subtitle1" className={classes.total}>
-            $140.00
+            $34.06
           </Typography>
         </ListItem>
       </List>
       <Grid container spacing={2}>
         <Grid item xs={12} sm={6}>
           <Typography variant="h6" gutterBottom className={classes.title}>
-            Shipping
+            Task Location
           </Typography>
           <Typography gutterBottom>John Smith</Typography>
           <Typography gutterBottom>{addresses.join(', ')}</Typography>
