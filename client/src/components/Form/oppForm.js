@@ -1,7 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import {reduxForm} from 'redux-form';
 
-import { addClient } from '../actions/actions';
+import { addClient } from '../../actions/actions';
 
 class InputForm extends Component {
   static propTypes = {
