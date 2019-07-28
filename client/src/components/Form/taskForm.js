@@ -4,7 +4,7 @@ import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
-import DateTimePicker from '../components/DateTimePicker/datePicker';
+import DateTimePicker from '../DateTimePicker/datePicker';
 
 
 export default function TaskForm() {

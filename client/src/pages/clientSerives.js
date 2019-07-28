@@ -7,10 +7,10 @@ import Step from '@material-ui/core/Step';
 import StepLabel from '@material-ui/core/StepLabel';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import ClientForm from '../forms/clientForm';
-import TaskForm from '../forms/taskForm';
-import PaymentForm from '../forms/paymentForm';
-import Review from '../forms/review';
+import ClientForm from '../components/Form/clientForm';
+import TaskForm from '../components/Form/taskForm';
+import PaymentForm from '../components/Form/paymentForm';
+import Review from '../components/Form/review';
 
 
 const useStyles = makeStyles(theme => ({

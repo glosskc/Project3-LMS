@@ -4,7 +4,7 @@ import TextField from 'material-ui/lib/text-field';
 import RaisedButton from 'material-ui/lib/raised-button';
 
 
-import { addTask } from '../actions/actions';
+import { addTask } from '../../actions/actions';
 
 class TaskForm extends Component {
   static propTypes = {
