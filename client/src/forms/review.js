@@ -9,8 +9,8 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import ClientForm from './clientForm';
 import TaskForm from './taskForm';
-import PaymentForm from '../forms/paymentForm';
-import Review from '../forms/review';
+import PaymentForm from './paymentForm';
+// import Review from './review';
 
 
 const useStyles = makeStyles(theme => ({
@@ -61,7 +61,7 @@ function getStepContent(step) {
     case 2:
       return <PaymentForm />;
     case 3:
-      return <Review />;
+      return <Checkout />;
     default:
       throw new Error('Unknown step');
   }
@@ -85,7 +85,7 @@ export default function Checkout() {
       <main className={classes.layout}>
         <Paper className={classes.paper}>
           <Typography component="h1" variant="h4" align="center">
-            Checkout
+            Review
           </Typography>
           <Stepper activeStep={activeStep} className={classes.stepper}>
             {steps.map(label => (

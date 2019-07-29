@@ -4,7 +4,7 @@ import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
-import Date from '../components/Date/date'
+// import Date from '../components/Date/date'
 
 
 export default function TaskForm() {
@@ -15,7 +15,7 @@ export default function TaskForm() {
       </Typography>
       <Grid container spacing={3}>
         
-        <Date />
+        {/* <Date /> */}
         {/* <Grid item xs={12} sm={6}>
           <TextField
             required
@@ -67,8 +67,8 @@ export default function TaskForm() {
         </Grid>
         <Grid item xs={12} sm={6}>
           <TextField id="state" name="state" label="State/Province/Region" fullWidth />
-        </Grid>
-        <Grid item xs={12} sm={6}>
+        </Grid> 
+         <Grid item xs={12} sm={6}>
           <TextField
             required
             id="zip"
@@ -78,7 +78,7 @@ export default function TaskForm() {
             autoComplete="billing postal-code"
           />
         </Grid>
-        <Grid item xs={12} sm={6}>
+        {/* <Grid item xs={12} sm={6}>
           <TextField
             required
             id="country"
@@ -87,7 +87,21 @@ export default function TaskForm() {
             fullWidth
             autoComplete="billing country"
           />
+        </Grid> */}
+        <Grid item xs={12}>
+          <TextField
+              id="standard-multiline-flexible"
+              label="Notes"
+              multiline
+              rowsMax="4"
+              fullWidth
+              // value={values.multiline}
+              // onChange={handleChange('multiline')}
+              // className={classes.textField}
+              margin="normal"
+          />
         </Grid>
+
         <Grid item xs={12}>
           <FormControlLabel
             control={<Checkbox color="secondary" name="saveAddress" value="yes" />}

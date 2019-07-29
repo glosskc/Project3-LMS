@@ -17,9 +17,6 @@ const useStyles = makeStyles(theme => ({
   appBar: {
     position: 'relative',
   },
-  grid: {
-    width: '60%',
-  },
   layout: {
     width: 'auto',
     marginLeft: theme.spacing(2),
@@ -88,7 +85,7 @@ export default function Checkout() {
       <main className={classes.layout}>
         <Paper className={classes.paper}>
           <Typography component="h1" variant="h4" align="center">
-            Create a Task
+            Create Task
           </Typography>
           <Stepper activeStep={activeStep} className={classes.stepper}>
             {steps.map(label => (
