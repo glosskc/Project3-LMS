@@ -29,8 +29,8 @@ export default function TaskForm() {
         <Grid item xs={12}>
           <TextField
             required
-            id="taskAddress"
-            name="taskAddress"
+            id="location"
+            name="location"
             label="Task Address"
             fullWidth
           />
