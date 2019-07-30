@@ -301,6 +301,18 @@ class MainCalendar extends React.PureComponent {
       .catch(err => console.log(err));
         
     };
+    this.deleteAppt = id => {
+      API.deleteAppointment(id)
+        .then(res => this.loadClient())
+        .catch(err => console.log(err));
+    };
+
+    this.changeAppt = id => {
+      const [appt] = this.state.data;
+      API.saveAppointment(appt)
+      .then(this.loadClient)
+      .catch(err => console.log(err));
+    };
     
     
 

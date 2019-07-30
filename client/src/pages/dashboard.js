@@ -30,9 +30,20 @@ class Dashboard extends Component{
 
     componentDidMount(){
         this.loadClient();
+        this.loadClientInfo();
     };
 
-    loadClient = () => {
+    loadClientInfo = () => {
+        API.getClients()
+          .then(res =>{
+            // console.log(res.data);
+            this.setState({ clientInfo: res.data, clientName: "", taskName: "", email: "", phone: "", address: "", notes: "" })
+            console.log(this.state.clientInfo);
+          })
+          .catch(err => console.log(err));
+      };
+
+      loadClient = () => {
         API.getAppointments()
           .then(res =>{
             // console.log(res.data);
@@ -116,7 +127,7 @@ class Dashboard extends Component{
            <Container>
            <Grid container spacing={3}>
                <Grid item xs={12}>
-           <Table2 />
+           <Table2 value={this.state.clientInfo} />
            </Grid>
            </Grid>
            </Container>
