@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 const passport = require('passport');
 const User = require('../models/User');
+const userController = require('../controllers/userController');
 
-const userController = {};
 
 userController.home = function(req, res) {
     res.render('index', )

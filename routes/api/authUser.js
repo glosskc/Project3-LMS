@@ -4,9 +4,9 @@ const auth = require = require('../../controllers/AuthController');
 
 router.get('/', auth.home);
 
-router.get('/Register', auth.register);
+router.get('/signup', auth.register);
 
-router.post('/Register', auth.doRegister);
+router.post('/signup', auth.doRegister);
 
 router.get('/signin', auth.login);
 
