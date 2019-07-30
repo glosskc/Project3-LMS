@@ -1,8 +1,8 @@
-var mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
-var Schema = mongoose.Schema;
+const Schema = mongoose.Schema;
 
-var appointmentSchema = new Schema ({
+const appointmentSchema = new Schema ({
     _clientId: {
         type: Schema.Types.ObjectId,
         ref: "Client"
@@ -27,6 +27,6 @@ var appointmentSchema = new Schema ({
     }
 });
 
-var Appointment = mongoose.model("Appointment", appointmentSchema);
+const Appointment = mongoose.model("Appointment", appointmentSchema);
 
 module.exports = Appointment;

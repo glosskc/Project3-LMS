@@ -8,25 +8,30 @@ import {
   Toolbar,
   ViewSwitcher, 
   DateNavigator,
+  TodayButton
 } from '@devexpress/dx-react-scheduler-material-ui';
 
 import { appointments } from '../../Data/data';
+import API from '../../utils/API';
+
 
 export default class WeekCalendar extends React.PureComponent {
   constructor(props) {
     super(props);
 
     this.state = {
-      data: appointments,
+      data: [],
       currentViewName: 'work-week',
     };
     this.currentViewNameChange = (currentViewName) => {
       this.setState({ currentViewName });
     };
-  }
 
+  }
+  
   render() {
-    const { data, currentViewName } = this.state;
+    // const { data, currentViewName } = this.state;
+    const data = this.props.value;
 
     return (
       <Paper>
@@ -36,7 +41,7 @@ export default class WeekCalendar extends React.PureComponent {
         >
           <ViewState
             // defaultCurrentDate="2018-07-25"
-            currentViewName={currentViewName}
+            currentViewName={this.state.currentViewName}
             onCurrentViewNameChange={this.currentViewNameChange}
           />
 
@@ -53,6 +58,7 @@ export default class WeekCalendar extends React.PureComponent {
           />
           <Toolbar />
           <DateNavigator />
+          <TodayButton />
           <ViewSwitcher />
           <Appointments />
         </Scheduler>
