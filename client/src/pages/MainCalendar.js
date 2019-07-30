@@ -36,7 +36,7 @@ import Notes from '@material-ui/icons/Notes';
 import Close from '@material-ui/icons/Close';
 import CalendarToday from '@material-ui/icons/CalendarToday';
 import Create from '@material-ui/icons/Create';
-
+import API from '../utils/API';
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import { blue } from "@material-ui/core/colors";
 import { appointments } from '../Data/data';
@@ -264,10 +264,11 @@ const styles = theme => ({
 
 /* eslint-disable-next-line react/no-multi-comp */
 class MainCalendar extends React.PureComponent {
+
   constructor(props) {
     super(props);
     this.state = {
-      data: appointments,
+      data: [],
       // currentDate: '2019-06-27',
       currentViewName: 'work-week',
       confirmationVisible: false,
@@ -278,6 +279,31 @@ class MainCalendar extends React.PureComponent {
       startDayHour: 9,
       endDayHour: 22,
     };
+
+   
+
+    this.loadClient = (res) => {
+      console.log(res)
+      API.getAppointments()
+        .then(res =>{
+          // console.log(res.data);
+          this.setState({ client: res.data, title: "", startDate: "", endDate: "", location: "", notes: "" })
+          console.log(this.state.client);
+        })
+        .catch(err => console.log(err));
+    };
+
+    this.saveClient = () => {
+      console.log(this.state);
+      const [appt] = this.state.data;
+      API.saveAppointment(appt)
+      .then(this.loadClient)
+      .catch(err => console.log(err));
+        
+    };
+    
+    
+
     this.currentViewNameChange = (currentViewName) => {
       this.setState({ currentViewName });
     };
@@ -308,6 +334,10 @@ class MainCalendar extends React.PureComponent {
       };
     });
   }
+
+  componentDidMount() {
+    this.loadClient();
+  };
 
   componentDidUpdate() {
     this.appointmentForm.update();
@@ -349,6 +379,7 @@ class MainCalendar extends React.PureComponent {
   }
 
   commitChanges({ added, changed, deleted }) {
+    console.log(added, changed);
     this.setState((state) => {
       let { data } = state;
       if (added) {
@@ -364,13 +395,14 @@ class MainCalendar extends React.PureComponent {
         this.toggleConfirmationVisible();
       }
       return { data, addedAppointment: {} };
+    }, ()=>{
+      this.saveClient();
     });
   }
 
   render() {
     const {
       currentDate,
-      data,
       confirmationVisible,
       editingFormVisible,
       startDayHour,
@@ -383,7 +415,7 @@ class MainCalendar extends React.PureComponent {
       <MuiThemeProvider theme={theme}>
         <Paper>
           <Scheduler
-            data={data}
+            data={this.state.client}
             height={660}
           >
             <ViewState

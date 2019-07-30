@@ -25,10 +25,10 @@ app.use(require('express-session') ({
   saveUninitialized: false
 }));
 
-const User = require('./models/User');
-passport.use(new LocalStrategy(User.authenticate()));
-passport.serializeUser(User.serializeUser());
-passport.deserializeUser(User.deserializeUser());
+// const User = require('./models/User');
+// passport.use(new LocalStrategy(User.authenticate()));
+// passport.serializeUser(User.serializeUser());
+// passport.deserializeUser(User.deserializeUser());
 
 
 // Connect to the Mongo DB
