@@ -7,14 +7,18 @@ import Step from '@material-ui/core/Step';
 import StepLabel from '@material-ui/core/StepLabel';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import AddressForm from '../forms/addressForm';
-import PaymentForm from '../forms/paymentForm';
-import Review from '../forms/review';
+import ClientForm from '../components/Form/clientForm';
+import TaskForm from '../components/Form/taskForm';
+import PaymentForm from '../components/Form/paymentForm';
+import Review from '../components/Form/review';
 
 
 const useStyles = makeStyles(theme => ({
   appBar: {
     position: 'relative',
+  },
+  grid: {
+    width: '60%',
   },
   layout: {
     width: 'auto',
@@ -49,22 +53,24 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const steps = ['Shipping address', 'Payment details', 'Review your order'];
+const steps = ['Client', 'Task', 'Payment', 'Review'];
 
 function getStepContent(step) {
   switch (step) {
     case 0:
-      return <AddressForm />;
+      return <ClientForm />;
     case 1:
-      return <PaymentForm />;
+      return <TaskForm />;
     case 2:
+      return <PaymentForm />;
+    case 3:
       return <Review />;
     default:
       throw new Error('Unknown step');
   }
 }
 
-export default function Checkout() {
+export default function ClientServices() {
   const classes = useStyles();
   const [activeStep, setActiveStep] = React.useState(0);
 
@@ -82,7 +88,7 @@ export default function Checkout() {
       <main className={classes.layout}>
         <Paper className={classes.paper}>
           <Typography component="h1" variant="h4" align="center">
-            Checkout
+            Create a Task
           </Typography>
           <Stepper activeStep={activeStep} className={classes.stepper}>
             {steps.map(label => (

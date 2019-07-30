@@ -1,23 +1,7 @@
-// import React, { Component } from 'react';
-// import SideNav from './components/sideNav/sideNav'
-// import './App.css';
-
-// class App extends Component {
-//   render() {
-//     return (
-//       <div className="App">
-//         < SideNav />
-//       </div>
-//     )
-//   }
-// };
-
-// export default App;
-
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import SignIn from './pages/SignIn';
-import FullSite from './Containers/Full'
+import FullSite from './Containers/FullSite'
 
 function App() {
   return (
@@ -31,5 +15,4 @@ function App() {
   );
       
 }
-
 export default App;
