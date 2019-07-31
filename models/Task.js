@@ -23,7 +23,7 @@ const taskSchema = new Schema ({
         type: Date,
         default: Date.now
     },
-    notes: {
+    taskNotes: {
         type: String
     }
 });
