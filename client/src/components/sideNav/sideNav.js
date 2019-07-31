@@ -17,6 +17,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
+import { Link } from 'react-router-dom';
 // import Calendar from '../WeekCalendar';
 // import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // import Dashboard from "./pages/dashboard";
@@ -87,6 +88,19 @@ export default function SideNav(props) {
   const classes = useStyles();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
+  const url = [{
+    name: "Dashboard",
+    url: "/app/dashbaord",
+  },
+  {
+    name: "Calendar",
+    url: "/app/calendar",
+  },
+  {
+    name: "Client",
+    url: "/app/client",
+  },
+];
 
   function handleDrawerOpen() {
     setOpen(true);
@@ -136,11 +150,16 @@ export default function SideNav(props) {
         </div>
         <Divider />
         <List>
-          {['Dashboard', 'Clients', 'Calendar', 'Tasks'].map((text, index) => (
-            <ListItem button key={text}>
+          {url.map((text, index) => (
+          
+            <ListItem button key={text.name}>
+              <a href={text.url}>
               <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-              <ListItemText primary={text} />
+              <ListItemText primary={text.name}></ListItemText>
+              <IconButton></IconButton>
+              </a>
             </ListItem>
+          
           ))}
         </List>
         <Divider />

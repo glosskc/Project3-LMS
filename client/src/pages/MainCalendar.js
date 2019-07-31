@@ -381,6 +381,9 @@ class MainCalendar extends React.PureComponent {
   }
 
   commitDeletedAppointment() {
+    this.deleteAppt((id) => {
+      
+    })
     this.setState((state) => {
       const { data, deletedAppointmentId } = state;
       const nextData = data.filter(appointment => appointment.id !== deletedAppointmentId);
