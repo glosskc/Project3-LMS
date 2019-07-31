@@ -35,27 +35,13 @@ export default function TaskForm() {
             fullWidth
           />
         </Grid>
-        <Grid item xs={12} sm={6}>
+        <Grid item xs={12}>
           <TextField
             required
-            id="city"
-            name="city"
-            label="City"
+            id="taskNotes"
+            name="taskNotes"
+            label="Task Notes"
             fullWidth
-            autoComplete="billing address-level2"
-          />
-        </Grid>
-        <Grid item xs={12} sm={6}>
-          <TextField id="state" name="state" label="State/Province/Region" fullWidth />
-        </Grid>
-        <Grid item xs={12} sm={6}>
-          <TextField
-            required
-            id="zip"
-            name="zip"
-            label="Zip / Postal code"
-            fullWidth
-            autoComplete="billing postal-code"
           />
         </Grid>
         <Grid item xs={12}>
