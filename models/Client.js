@@ -7,10 +7,7 @@ const clientSchema = new Schema ({
         type: String,
         required: true
     },
-    // taskName: {
-    //     type: String,
-    //     required: true
-    // },
+   
     address: {
         type: String,
         required: true

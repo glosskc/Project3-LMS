@@ -14,6 +14,8 @@ import TextField from '@material-ui/core/TextField';
 //   { name: 'Service 2', desc: 'Lawn Edged', price: '$10.00' },
 //   { name: 'Service 3', desc: 'Gutters Cleaned', price: '$70.00' },
 // ];
+
+
 const addresses = ['1 Material-UI Drive', 'Reactville', 'Anytown', '99999', 'USA'];
 const payments = [
   { name: 'Card type', detail: 'Visa' },

@@ -40,7 +40,7 @@ export default function TaskForm() {
             required
             id="taskNotes"
             name="taskNotes"
-            label="Task Notes"
+            label="Task Notes" 
             fullWidth
           />
         </Grid>
