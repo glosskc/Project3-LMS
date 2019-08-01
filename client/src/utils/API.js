@@ -105,7 +105,7 @@ export default {
 
   getSignOut: function() {
     return axios.get('/api/signout')
-
+  },
 
   signOut: function() {
     return axios.post('/api/auth/signout', {});
