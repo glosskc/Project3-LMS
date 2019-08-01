@@ -53,6 +53,23 @@ export default {
     return axios.post("/api/tasks", tasksData);
   },
 //   ___________________________________________
+// Payment________________________________________
+  getPayments: function() {
+    return axios.get("/api/payments");
+  },
+  // Gets the payments with the given id
+  getPayment: function(id) {
+    return axios.get("/api/payments/" + id);
+  },
+  // Deletes the payments with the given id
+  deletePayment: function(id) {
+    return axios.delete("/api/payments/" + id);
+  },
+  // Saves a payment to the database
+  savePayment: function(paymentsData) {
+    return axios.post("/api/payments", paymentsData);
+  },
+//   ___________________________________________
 // USERS________________________________________
   getUsers: function() {
     return axios.get("/api/users");
@@ -87,7 +104,6 @@ export default {
   postSignIn: function() {
     return axios.post('/api/signin');
   },
-
 
   getSignOut: function() {
     return axios.get('/api/signout')
