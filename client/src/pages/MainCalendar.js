@@ -120,6 +120,7 @@ class AppointmentFormContainerBasic extends React.PureComponent {
   }
 
   commitAppointment(type) {
+    console.log(type);
     const { commitChanges } = this.props;
     const appointment = {
       ...this.getAppointmentData(),
@@ -129,9 +130,12 @@ class AppointmentFormContainerBasic extends React.PureComponent {
       commitChanges({ [type]: appointment.id });
     } else if (type === 'changed') {
       commitChanges({ [type]: { [appointment.id]: appointment } });
-    } else {
+    } else if(type === 'added'){
       commitChanges({ [type]: appointment });
-    }
+    } else console.log(type);
+
+
+    
     this.setState({
       appointmentChanges: {},
     });
@@ -227,8 +231,8 @@ class AppointmentFormContainerBasic extends React.PureComponent {
                 color="secondary"
                 className={classes.button}
                 onClick={() => {
-                  visibleChange();
                   this.commitAppointment('deleted');
+                  visibleChange();
                 }}
               >
                 Delete
@@ -287,7 +291,7 @@ class MainCalendar extends React.PureComponent {
       API.getAppointments()
         .then(res =>{
           // console.log(res.data);
-          this.setState({ client: res.data, title: "", startDate: "", endDate: "", location: "", notes: "" })
+          this.setState({ client: res.data, id: res._id, title: "", startDate: "", endDate: "", location: "", notes: "" })
           console.log(this.state.client);
         })
         .catch(err => console.log(err));
@@ -307,9 +311,10 @@ class MainCalendar extends React.PureComponent {
         .catch(err => console.log(err));
     };
 
-    this.changeAppt = id => {
-      const [appt] = this.state.data;
-      API.saveAppointment(appt)
+    this.changeAppt = appointmentData => {
+      console.log(appointmentData);
+      // const [appt] = this.state.data;
+      API.updateAppointment(appointmentData)
       .then(this.loadClient)
       .catch(err => console.log(err));
     };
@@ -364,6 +369,12 @@ class MainCalendar extends React.PureComponent {
     this.onEditingAppointmentIdChange(undefined);
   }
 
+  onAppointmentChangesChange(changedAppointment) {
+    // console.log(changedAppointment);
+    this.setState({ changedAppointment });
+    this.onEditingAppointmentIdChange(undefined);
+  }
+
   setDeletedAppointmentId(id) {
     this.setState({ deletedAppointmentId: id });
   }
@@ -381,10 +392,11 @@ class MainCalendar extends React.PureComponent {
   }
 
   commitDeletedAppointment() {
-    this.deleteAppt((id) => {
-      
-    })
+    // this.deleteAppt((id) => {
+
+    // })
     this.setState((state) => {
+      console.log(" state " + state);
       const { data, deletedAppointmentId } = state;
       const nextData = data.filter(appointment => appointment.id !== deletedAppointmentId);
 
@@ -394,14 +406,18 @@ class MainCalendar extends React.PureComponent {
   }
 
   commitChanges({ added, changed, deleted }) {
-    console.log(added, changed);
+    console.log(this.state, this.props);
     this.setState((state) => {
+      
+      console.log("hey", state);
       let { data } = state;
       if (added) {
         const startingAddedId = data.length > 0 ? data[data.length - 1].id + 1 : 0;
         data = [...data, { id: startingAddedId, ...added }];
       }
       if (changed) {
+        console.log(changed);
+        this.changeAppt(Object.values(changed).pop());
         data = data.map(appointment => (
           changed[appointment.id] ? { ...appointment, ...changed[appointment.id] } : appointment));
       }
@@ -440,9 +456,11 @@ class MainCalendar extends React.PureComponent {
               onCurrentDateChange={this.currentDateChange}
             />
             <EditingState
+              editingAppointmentId="title"
               onCommitChanges={this.commitChanges}
               onEditingAppointmentIdChange={this.onEditingAppointmentIdChange}
               onAddedAppointmentChange={this.onAddedAppointmentChange}
+              onAppointmentChangesChange={this.onAppointmentChangesChange.bind(this)}
             />
             <WeekView
               startDayHour={startDayHour}
@@ -503,6 +521,7 @@ class MainCalendar extends React.PureComponent {
             color="secondary"
             className={classes.addButton}
             onClick={() => {
+              
               this.setState({ editingFormVisible: true });
               this.onEditingAppointmentIdChange(undefined);
               this.onAddedAppointmentChange({

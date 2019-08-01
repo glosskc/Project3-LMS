@@ -88,16 +88,17 @@ export default function SideNav(props) {
   const classes = useStyles();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
+  
   const url = [{
-    name: "Dashboard",
-    url: "/app/dashbaord",
+    name: `Dashboard`,
+    url: "/app/dashboard",
   },
   {
     name: "Calendar",
     url: "/app/calendar",
   },
   {
-    name: "Client",
+    name: "New Client",
     url: "/app/client",
   },
 ];
@@ -153,11 +154,16 @@ export default function SideNav(props) {
           {url.map((text, index) => (
           
             <ListItem button key={text.name}>
-              <a href={text.url}>
+             
               <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+              <a href={text.url}>
               <ListItemText primary={text.name}></ListItemText>
+              
               <IconButton></IconButton>
+              
               </a>
+              
+              
             </ListItem>
           
           ))}
