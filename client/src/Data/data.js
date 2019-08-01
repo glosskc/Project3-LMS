@@ -1,4 +1,4 @@
-export const appointments = [
+ const appointments = [
     {
       title: "Mow Lawn ",
       startDate: new Date(2019, 5, 24, 10, 30),
