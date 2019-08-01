@@ -7,6 +7,7 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import API from '../../utils/API'
+import { isThursday } from 'date-fns';
 
 
 class SignUpModal extends Component {
@@ -25,26 +26,36 @@ class SignUpModal extends Component {
   
   state = {
     open: false,
-    email: '',
+    username: '',
     password: ''
    };
 
-  //  handleInputChange = event => {
-  //    console.log("event" + event);
-  //     const { name, value } = event.target;
+   handleInputChange = event => {
+     console.log("event" + event);
+      const { name, value } = event.target;
 
-  //  this.setState({
-  //   [name]: value
-  //  });
-  // };
+   this.setState({
+    [name]: value
+   });
+  };
   
   handleFormSubmit = event => {
     event.preventDefault();
-    API.getSignUp().then(res => {
+
+    const user = {
+      username: this.state.username,
+      password: this.state.password
+    }
+    console.log(user);
+    
+    API.signUp(user).then(res => {
       console.log("this: " + res);
-      this.setState({ email: '',
+      this.setState({ 
+        username: '',
           password: '',
           open:false});
+          
+          this.props.history.push(`/app/dashboard`);
     })
     
   };
@@ -70,22 +81,22 @@ class SignUpModal extends Component {
                  <TextField
                       autoFocus
                       margin="normal"
-                      id="email"
+                      name="username"
                       label="Email Address"
                       type="email"
-                      // value={this.state.email}
-                      // onChange={this.handleInputChange.bind(this)}
+                      value={this.state.username}
+                      onChange={this.handleInputChange.bind(this)}
                       fullWidth
                       required
                   />
                   <TextField
                       autoFocus
                       margin="normal"
-                      id="password"
+                      name="password"
                       label="Password"
                       type="text"
-                      // value={this.state.password}
-                      // onChange={this.handleInputChange.bind(this)}
+                      value={this.state.password}
+                      onChange={this.handleInputChange.bind(this)}
                       fullWidth
                       required
                   />
