@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import SignUpModal from '../components/Modal';
 
 import Avatar from '@material-ui/core/Avatar';
@@ -11,11 +11,13 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
+import { withStyles } from '@material-ui/core/styles';
+import API from '../utils/API'
 
 
-const useStyles = makeStyles(theme => ({
-    root: {
+
+const useStyles = theme => {
+    return {root: {
       height: '100vh',
     },
     image: {
@@ -41,63 +43,111 @@ const useStyles = makeStyles(theme => ({
     submit: {
       margin: theme.spacing(3, 0, 2),
     },
-  }));
-
-  export default function SignIn() {
-    const classes = useStyles();
-  
-    return (
-      <Grid container component="main" className={classes.root}>
-        <CssBaseline />
-        <Grid item xs={false} sm={4} md={7} className={classes.image} />
-        <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
-          <div className={classes.paper}>
-            <Avatar className={classes.avatar}>
-              <LockOutlinedIcon />
-            </Avatar>
-            <Typography component="h1" variant="h5">
-              Sign in
-            </Typography>
-            <form className={classes.form} noValidate>
-              <TextField
-                variant="outlined"
-                margin="normal"
-                required
-                fullWidth
-                id="email"
-                label="Email Address"
-                name="email"
-                autoComplete="email"
-                autoFocus
-              />
-              <TextField
-                variant="outlined"
-                margin="normal"
-                required
-                fullWidth
-                name="password"
-                label="Password"
-                type="password"
-                id="password"
-                autoComplete="current-password"
-              />
-              <FormControlLabel
-                control={<Checkbox value="remember" color="primary" />}
-                label="Remember me"
-              />
-              <Button
-                type="submit"
-                fullWidth
-                variant="contained"
-                color="primary"
-                className={classes.submit}
-              >
-                Sign In
-              </Button>
-              <SignUpModal />
-            </form>
-          </div>
-        </Grid>
-      </Grid>
-    );
   }
+};
+
+  class SignIn extends React.PureComponent {
+    constructor(props){
+      super(props);
+
+      this.state = {
+        username: '',
+        password: ''
+       };
+    }
+    
+  
+     handleInputChange = event => {
+       console.log("event" + event);
+        const { name, value } = event.target;
+  
+     this.setState({
+      [name]: value
+     });
+    };
+    
+    handleFormSubmit = event => {
+      event.preventDefault();
+  
+      const user = {
+        username: this.state.username,
+        password: this.state.password
+      }
+      console.log(event, user)
+      
+      API.signIn(user).then(res => {
+        console.log("this: " + res);
+        this.setState({ 
+          username: '',
+          password: ''
+        });
+        this.props.history.push(`/app/dashboard`);
+      })
+      
+    };
+
+  
+    render(){
+      const classes = this.props.classes;
+      return (
+        <Grid container component="main" className={classes.root}>
+          <CssBaseline />
+          <Grid item xs={false} sm={4} md={7} className={classes.image} />
+          <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
+            <div className={classes.paper}>
+              <Avatar className={classes.avatar}>
+                <LockOutlinedIcon />
+              </Avatar>
+              <Typography component="h1" variant="h5">
+                Sign in
+              </Typography>
+              <form className={classes.form} noValidate>
+                <TextField
+                  variant="outlined"
+                  margin="normal"
+                  required
+                  fullWidth
+                  id="email"
+                  label="Email Address"
+                  name="username"
+                  autoComplete="username"
+                  autoFocus
+                  onChange={this.handleInputChange.bind(this)}
+                />
+                <TextField
+                  variant="outlined"
+                  margin="normal"
+                  required
+                  fullWidth
+                  name="password"
+                  label="Password"
+                  type="password"
+                  id="password"
+                  autoComplete="current-password"
+                  onChange={this.handleInputChange.bind(this)}
+                />
+                <FormControlLabel
+                  control={<Checkbox value="remember" color="primary" />}
+                  label="Remember me"
+                />
+                <Button
+                  type="submit"
+                  fullWidth
+                  variant="contained"
+                  color="primary"
+                  className={classes.submit}
+                  onClick={this.handleFormSubmit.bind(this)}
+                >
+                  Sign In
+                </Button>
+                <SignUpModal />
+              </form>
+            </div>
+          </Grid>
+        </Grid>
+      );
+    }
+    
+  }
+
+  export default withStyles(useStyles, { name: 'Signup' })(SignIn) 
