@@ -2,32 +2,29 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const taskSchema = new Schema ({
+const paymentSchema = new Schema ({
     _clientId: {
         type: Schema.Types.ObjectId,
         ref: "Client"
     },
-    taskTitle: {
+    cardName: {
         type: String,
         required: true
     },
-    location: {
+    cardNumber: {
         type: String,
         required: true
     },
-    startDate: {
+    expDate: {
         type: Date,
         default: Date.now
     },
-    endDate: {
+    cvv: {
         type: Date,
         default: Date.now
     },
-    taskNotes: {
-        type: String
-    }
 });
 
-const Task = mongoose.model("Task", taskSchema);
+const Payment = mongoose.model("Payment", paymentSchema);
 
-module.exports = Task;
+module.exports = Payment;

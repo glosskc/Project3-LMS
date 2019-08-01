@@ -1,4 +1,5 @@
 import axios from "axios";
+import { connectableObservableDescriptor } from "rxjs/internal/observable/ConnectableObservable";
 
 export default {
   // APPOINTMENTS-------------------
@@ -57,6 +58,23 @@ export default {
     return axios.post("/api/tasks", tasksData);
   },
 //   ___________________________________________
+// Payment________________________________________
+  getPayments: function() {
+    return axios.get("/api/payments");
+  },
+  // Gets the payments with the given id
+  getPayment: function(id) {
+    return axios.get("/api/payments/" + id);
+  },
+  // Deletes the payments with the given id
+  deletePayment: function(id) {
+    return axios.delete("/api/payments/" + id);
+  },
+  // Saves a payment to the database
+  savePayment: function(paymentsData) {
+    return axios.post("/api/payments", paymentsData);
+  },
+//   ___________________________________________
 // USERS________________________________________
   getUsers: function() {
     return axios.get("/api/users");
@@ -75,25 +93,22 @@ export default {
   },
 
   //Auth.Users
-
-  getSignUp: function() {
-    return axios.get('/api/signup');
-  },
   
-  postSignUp: function() {
-    return axios.post('/api/signup');
+  signUp: function(body) {
+    console.log(body);
+    return axios.post('/api/auth/signup', body);
   },
 
-  getSignIn: function() {
-    return axios.get('/api/signin');
+  signIn: function(body) {
+    return axios.post('/api/auth/signin', body);
   },
-
-  postSignIn: function() {
-    return axios.post('/api/signin');
-  },
-
 
   getSignOut: function() {
     return axios.get('/api/signout')
+
+
+  signOut: function() {
+    return axios.post('/api/auth/signout', {});
+
   }
 };

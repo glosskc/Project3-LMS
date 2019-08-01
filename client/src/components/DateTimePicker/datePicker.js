@@ -23,6 +23,7 @@ export default function DateTimePickers() {
         <KeyboardDatePicker
           margin="normal"
           id="mui-pickers-date"
+          name="datePicked"
           label="Date picker"
           value={selectedDate}
           onChange={handleDateChange}
@@ -33,6 +34,7 @@ export default function DateTimePickers() {
         <KeyboardTimePicker
           margin="normal"
           id="mui-pickers-time"
+          name="timePicked"
           label="Time picker"
           value={selectedDate}
           onChange={handleDateChange}
