@@ -15,7 +15,6 @@ import Calendar from '../components/WeekCalendar';
 import API from './../utils/API';
 
 
-
 class Dashboard extends Component{
 
     state = {
