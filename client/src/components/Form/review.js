@@ -6,6 +6,8 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
+// import {InputAdornment} from '@material-ui/core/InputAdornment';
+
 
 // const Services = [
 //   { name: 'Service 1', desc: 'Lawn Mowed', price: '$60.00' },
@@ -59,14 +61,14 @@ export default function Review() {
       <Grid container spacing={3}>
         <Grid item xs={12} md={6}>
           <TextField 
-            id="service1" 
+            id="service2" 
             label="Name of Service" 
             fullWidth 
           />
         </Grid>
         <Grid item xs={12} md={6}>
           <TextField  
-            id="price" 
+            id="price2" 
             label="Price of Service" 
             fullWidth 
           />
@@ -75,15 +77,15 @@ export default function Review() {
       <Grid container spacing={3}>
         <Grid item xs={12} md={6}>
           <TextField 
-            id="service1" 
+            id="service3" 
             label="Name of Service" 
             fullWidth 
           />
         </Grid>
         <Grid item xs={12} md={6}>
           <TextField  
-            id="price" 
-            label="Price of Service" 
+            id="priceTotal" 
+            label="Price Total" 
             fullWidth 
           />
         </Grid>

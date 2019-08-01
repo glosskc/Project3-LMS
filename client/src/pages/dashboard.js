@@ -12,6 +12,7 @@ import { Card, CardHeader, CardContent, CardActions, IconButton, List, ListItem,
 import { mergeClasses } from "@material-ui/styles";
 import Table2 from '../components/table2';
 import Calendar from '../components/WeekCalendar';
+import API from './../utils/API';
 
 
 
@@ -19,23 +20,38 @@ class Dashboard extends Component{
 
     state = {
         client: [],
-        address: "",
-        job: "",
-        information: ""
+        title: "",
+        startDate: "",
+        endDate: "",
+        location: "",
+        notes: ""
       };
     
 
     componentDidMount(){
-     
+        this.loadClient();
+        this.loadClientInfo();
     };
 
-    // loadClient = () => {
-    //     API.getBooks()
-    //       .then(res =>
-    //         this.setState({ client: res.data, address: "", job: "", information: "" })
-    //       )
-    //       .catch(err => console.log(err));
-    //   };
+    loadClientInfo = () => {
+        API.getClients()
+          .then(res =>{
+            // console.log(res.data);
+            this.setState({ clientInfo: res.data, clientName: "", taskName: "", email: "", phone: "", address: "", notes: "" })
+            console.log(this.state.clientInfo);
+          })
+          .catch(err => console.log(err));
+      };
+
+      loadClient = () => {
+        API.getAppointments()
+          .then(res =>{
+            // console.log(res.data);
+            this.setState({ client: res.data, title: "", startDate: "", endDate: "", location: "", notes: "" })
+            console.log(this.state.client);
+          })
+          .catch(err => console.log(err));
+      };
 
     // handleInputChange = event => {
     //     const { name, value } = event.target;
@@ -65,7 +81,7 @@ class Dashboard extends Component{
              <Grid container spacing={3}>
                  <Grid item xs={8}>
                      <Paper className="grid-xs=8">
-                     <Calendar />
+                     <Calendar value={this.state.client}></Calendar>
                      {/* <SimpleTable>
                       </SimpleTable> */}
                      </Paper>
@@ -111,7 +127,7 @@ class Dashboard extends Component{
            <Container>
            <Grid container spacing={3}>
                <Grid item xs={12}>
-           <Table2 />
+           <Table2 value={this.state.clientInfo} />
            </Grid>
            </Grid>
            </Container>
