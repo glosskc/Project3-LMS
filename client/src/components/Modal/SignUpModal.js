@@ -7,8 +7,6 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import API from '../../utils/API'
-// import { isThursday } from 'date-fns';
-
 
 class SignUpModal extends Component {
 
@@ -55,8 +53,7 @@ class SignUpModal extends Component {
           password: '',
           open:false});
           
-          this.state.history.push(`/app/dashboard`);
-          // console.log(this);
+          this.props.history.push('/app/dashboard');
     })
     
   };
@@ -82,6 +79,7 @@ class SignUpModal extends Component {
                  <TextField
                       autoFocus
                       margin="normal"
+                      id="standard-password-input"
                       name="username"
                       label="Email Address"
                       type="email"
@@ -100,6 +98,7 @@ class SignUpModal extends Component {
                       onChange={this.handleInputChange.bind(this)}
                       fullWidth
                       required
+                      autoComplete="current-password"
                   />
             </form>
           </DialogContent>
