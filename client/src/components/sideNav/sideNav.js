@@ -101,6 +101,10 @@ export default function SideNav(props) {
     name: "New Client",
     url: "/app/client",
   },
+  {
+    name: "Signout",
+    url: "/"
+  }
 ];
 
   function handleDrawerOpen() {

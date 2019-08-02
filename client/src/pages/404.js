@@ -19,7 +19,11 @@ class App extends React.Component {
       </div>
     </Router>
     )
-  }
+
+  };
+
+  
+
 }
 
 export default App

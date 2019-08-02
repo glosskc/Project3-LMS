@@ -3,17 +3,14 @@ const mongoose = require("mongoose");
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const routes = require("./routes");
-const db = require("./models");
-
+// const db = require("./models");
+const User = require("./models/User")
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// passport.use(new LocalStrategy({
-//   usernameField: 'email',
-// }, User.authenticate()));\
-passport.use(new LocalStrategy(db.User.authenticate()));
-passport.serializeUser(db.User.serializeUser());
-passport.deserializeUser(db.User.deserializeUser());
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
@@ -26,6 +23,8 @@ app.use(require('express-session') ({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
+
+
 
 
 // Serve up static assets (usually on heroku)
