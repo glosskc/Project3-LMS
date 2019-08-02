@@ -1,6 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
 import SignUpModal from '../components/Modal';
-
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -13,8 +12,6 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 import API from '../utils/API'
-
-
 
 const useStyles = theme => {
     return {root: {
@@ -55,7 +52,6 @@ const useStyles = theme => {
         password: ''
        };
     }
-    
   
      handleInputChange = event => {
        console.log("event" + event);
@@ -81,7 +77,7 @@ const useStyles = theme => {
           username: '',
           password: ''
         });
-        this.props.history.push(`/app/dashboard`);
+        this.props.history.push('/app/dashboard');
       })
       
     };
