@@ -1,5 +1,4 @@
 import axios from "axios";
-import { connectableObservableDescriptor } from "rxjs/internal/observable/ConnectableObservable";
 
 export default {
   // APPOINTMENTS-------------------
@@ -93,7 +92,6 @@ export default {
   },
 
   //Auth.Users
-  
   signUp: function(body) {
     console.log(body);
     return axios.post('/api/auth/signup', body);
@@ -101,14 +99,5 @@ export default {
 
   signIn: function(body) {
     return axios.post('/api/auth/signin', body);
-  },
-
-  getSignOut: function() {
-    return axios.get('/api/signout')
-  },
-
-  signOut: function() {
-    return axios.post('/api/auth/signout', {});
-
   }
 };

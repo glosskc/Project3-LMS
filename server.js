@@ -8,10 +8,9 @@ const db = require("./models");
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-
-passport.use(new LocalStrategy({
-  usernameField: 'email',
-}, User.authenticate()));
+// passport.use(new LocalStrategy({
+//   usernameField: 'email',
+// }, User.authenticate()));\
 passport.use(new LocalStrategy(db.User.authenticate()));
 passport.serializeUser(db.User.serializeUser());
 passport.deserializeUser(db.User.deserializeUser());
@@ -34,14 +33,12 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-
-
 // Add routes, both API and view
 app.use(routes);
 
 // Connect to the Mongo DB
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/CRM")
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/LMS")
   .then(() => console.log('Connection is successul!'))
   .catch((err) => console.log(err));
 
