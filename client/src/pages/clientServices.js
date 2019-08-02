@@ -115,21 +115,26 @@ class ClientServices extends Component {
         email: this.state.email,
         phone: this.state.phone,
         notes: this.state.notes,
-      }) 
-        .then(res => this.loadClients())
-        .catch(err => console.log(err));
-    }
-    else if (this.state.taskTitle && this.state.location) {
-      API.saveTask({
         taskTitle: this.state.taskTitle,
         datePicker: this.state.datePicker,
         timePicker: this.state.timePicker,
         location: this.state.location,
         taskNotes: this.state.taskNotes,
-      })
-        .then(res => this.loadTasks())
+      }) 
+        .then(res => this.loadClients())
         .catch(err => console.log(err));
     }
+    // else if (this.state.taskTitle && this.state.location) {
+    //   API.saveTask({
+    //     taskTitle: this.state.taskTitle,
+    //     datePicker: this.state.datePicker,
+    //     timePicker: this.state.timePicker,
+    //     location: this.state.location,
+    //     taskNotes: this.state.taskNotes,
+    //   })
+    //     .then(res => this.loadTasks())
+    //     .catch(err => console.log(err));
+    // }
   }
   
 

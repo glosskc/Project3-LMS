@@ -91,7 +91,7 @@ class TaskForm extends Component {
   //     .catch(err => console.log(err));
   // };
 
-  handleInputChange (event) {
+  handleInputChange(event) {
     const { name, value } = event.target;
     console.log(name, value);
     this.setState({
@@ -125,7 +125,7 @@ render () {
           <TextField
             onChange={this.props.handleInputChange}
             required
-            value={this.state.taskTitle}
+            value={this.props.taskTitle}
             id="taskTitle"
             name="taskTitle"
             label="Task Title"
@@ -139,7 +139,7 @@ render () {
           <TextField
             onChange={this.props.handleInputChange}
             required
-            value={this.state.location}
+            value={this.props.location}
             id="location"
             name="location"
             label="Task Address"
@@ -150,7 +150,7 @@ render () {
           <TextField
             onChange={this.props.handleInputChange}
             required
-            value={this.state.taskNotes}
+            value={this.props.taskNotes}
             id="taskNotes"
             name="taskNotes"
             label="Task Notes" 

@@ -140,7 +140,7 @@ class ClientForm extends Component {
         <Grid container spacing={3}>
           <Grid item xs={12} sm={6}>
             <TextField
-              onChange={this.props.handleInputChange}
+              onChange={this.propshandleInputChange}
               required
               value={this.props.clientName}
               id="clientName"
