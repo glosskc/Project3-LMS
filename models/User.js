@@ -4,11 +4,16 @@ const Schema = mongoose.Schema;
 
 const UserSchema = new Schema({
     userCreated: {
-        type: Date,
-        default: Date.now
+        type: String,
+        required: true,
+        // default: Date.now
+     },
+     password: {
+         type: String,
+         required: true,
      }
 });
 
-// UserSchema.plugin(passportLocalMongoose);
+UserSchema.plugin(passportLocalMongoose);
 
 module.exports = mongoose.model('User', UserSchema);

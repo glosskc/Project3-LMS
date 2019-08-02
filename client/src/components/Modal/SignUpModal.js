@@ -7,7 +7,7 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import API from '../../utils/API'
-import { isThursday } from 'date-fns';
+// import { isThursday } from 'date-fns';
 
 
 class SignUpModal extends Component {
@@ -49,13 +49,14 @@ class SignUpModal extends Component {
     console.log(user);
     
     API.signUp(user).then(res => {
-      console.log("this: " + res);
+      // console.log("this: " + res);
       this.setState({ 
         username: '',
           password: '',
           open:false});
           
-          this.props.history.push(`/app/dashboard`);
+          this.state.history.push(`/app/dashboard`);
+          // console.log(this);
     })
     
   };
@@ -94,7 +95,7 @@ class SignUpModal extends Component {
                       margin="normal"
                       name="password"
                       label="Password"
-                      type="text"
+                      type="password"
                       value={this.state.password}
                       onChange={this.handleInputChange.bind(this)}
                       fullWidth

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { connectableObservableDescriptor } from "rxjs/internal/observable/ConnectableObservable";
+// import { connectableObservableDescriptor } from "rxjs/internal/observable/ConnectableObservable";
 
 export default {
   // APPOINTMENTS-------------------
