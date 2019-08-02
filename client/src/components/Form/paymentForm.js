@@ -85,6 +85,7 @@ class PaymentForm extends Component {
 
   handleInputChange (event) {
     const { name, value } = event.target;
+    console.log(name, value);
     this.setState({
       [name]: value
     });
@@ -115,7 +116,7 @@ render () {
           <TextField 
             onChange={this.props.handleInputChange}
             required
-            value={this.state.cardName} 
+            value={this.props.cardName} 
             id="cardName" 
             label="Name on card" 
             fullWidth 
@@ -125,7 +126,7 @@ render () {
           <TextField 
             onChange={this.props.handleInputChange}
             required 
-            value={this.state.cardNumber} 
+            value={this.props.cardNumber} 
             id="cardNumber" 
             label="Card number" 
             fullWidth 
@@ -135,7 +136,7 @@ render () {
           <TextField 
             onChange={this.props.handleInputChange}
             required
-            value={this.state.expDate}  
+            value={this.props.expDate}  
             id="expDate" 
             label="Expiry date" 
             fullWidth 
@@ -145,7 +146,7 @@ render () {
           <TextField
             onChange={this.props.handleInputChange}
             required
-            value={this.state.cvv} 
+            value={this.props.cvv} 
             id="cvv"
             label="CVV"
             helperText="Last three digits on signature strip"
