@@ -8,9 +8,9 @@ const db = require("./models");
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// passport.use(new LocalStrategy({
-//   usernameField: 'email',
-// }, User.authenticate()));
+passport.use(new LocalStrategy({
+  usernameField: 'email',
+}, User.authenticate()));
 passport.use(new LocalStrategy(db.User.authenticate()));
 passport.serializeUser(db.User.serializeUser());
 passport.deserializeUser(db.User.deserializeUser());
