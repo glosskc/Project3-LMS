@@ -7,6 +7,7 @@ import {
 
 class App extends React.Component {
   render() {
+    return (
     <Router>
       <div>
         <ul>
@@ -17,7 +18,8 @@ class App extends React.Component {
         </ul>
       </div>
     </Router>
-  }
+    )
+  };
 }
 
 export default App
