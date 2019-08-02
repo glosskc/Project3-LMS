@@ -169,14 +169,14 @@ export default function SideNav(props) {
           ))}
         </List>
         <Divider />
-        <List>
+        {/* <List>
           {['New Client', 'New Tasks', 'Spam'].map((text, index) => (
             <ListItem button key={text}>
               <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
               <ListItemText primary={text} />
             </ListItem>
           ))}
-        </List>
+        </List> */}
       </Drawer>
       <main
         className={clsx(classes.content, {
