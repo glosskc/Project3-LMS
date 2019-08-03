@@ -146,7 +146,7 @@ class ClientForm extends Component {
               value={this.props.clientName}
               id="clientName"
               name="clientName"
-              label="Client name"
+              label="Client Name"
               autoComplete="fname"
             />
           </Grid>
@@ -157,7 +157,7 @@ class ClientForm extends Component {
               value={this.props.address}
               id="address"
               name="address"
-              label="Address line"
+              label="Address Line"
               fullWidth
               autoComplete="billing address-line1"
             />
