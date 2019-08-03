@@ -39,7 +39,7 @@ import Create from '@material-ui/icons/Create';
 import API from '../utils/API';
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import { blue } from "@material-ui/core/colors";
-// import { appointments } from '../Data/data';
+import { appointments } from '../Data/data';
 
 const theme = createMuiTheme({ palette: { type: "light", primary: blue } });
 
@@ -108,7 +108,6 @@ class AppointmentFormContainerBasic extends React.PureComponent {
     this.changeAppointment = this.changeAppointment.bind(this);
     this.commitAppointment = this.commitAppointment.bind(this);
   }
-  
 
   changeAppointment({ field, changes }) {
     const nextChanges = {
@@ -156,7 +155,7 @@ class AppointmentFormContainerBasic extends React.PureComponent {
       ...appointmentChanges,
     };
 
-    const isNewAppointment = appointmentData.id === "_id";
+    const isNewAppointment = appointmentData.id === undefined;
     const applyChanges = isNewAppointment
       ? () => this.commitAppointment('added')
       : () => this.commitAppointment('changed');
@@ -306,13 +305,19 @@ class MainCalendar extends React.PureComponent {
       .catch(err => console.log(err));
         
     };
-    this.deleteAppt = id => {
-      API.deleteAppointment(id)
-        .then(res => this.loadClient())
-        .catch(err => console.log(err));
-    };
+    // this.deleteAppt = id => {
+    //   API.deleteAppointment(id)
+    //     .then(res => this.loadClient())
+    //     .catch(err => console.log(err));
+    // };
 
-    
+    // this.changeAppt = appointmentData => {
+    //   console.log(appointmentData);
+    //   // const [appt] = this.state.data;
+    //   API.updateAppointment(appointmentData)
+    //   .then(this.loadClient)
+    //   .catch(err => console.log(err));
+    // };
     
     
 
@@ -412,7 +417,7 @@ class MainCalendar extends React.PureComponent {
       }
       if (changed) {
         console.log(changed);
-        this.changeAppt(Object.values(changed).pop());
+        // this.changeAppt(Object.values(changed).pop());
         data = data.map(appointment => (
           changed[appointment.id] ? { ...appointment, ...changed[appointment.id] } : appointment));
       }
@@ -532,5 +537,4 @@ class MainCalendar extends React.PureComponent {
     );
   }
 }
-
 export default withStyles(styles, { name: 'EditingDemo' })(MainCalendar);
