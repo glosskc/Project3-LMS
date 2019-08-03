@@ -72,12 +72,11 @@ const useStyles = theme => {
       console.log(event, user)
       
       API.signIn(user).then(res => {
-        console.log("this: " + res);
         this.setState({ 
           username: '',
           password: ''
         });
-        this.props.history.push('/app/dashboard');
+        this.props.history.push(`/app/dashboard`);
       })
       
     };

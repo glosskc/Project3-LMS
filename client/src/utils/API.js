@@ -93,11 +93,16 @@ export default {
 
   //Auth.Users
   signUp: function(body) {
-    console.log(body);
+    // console.log(body);
     return axios.post('/api/auth/signup', body);
   },
 
   signIn: function(body) {
+    console.log(body);
     return axios.post('/api/auth/signin', body);
-  }
+  },
+
+  signOut: function() {
+    return axios.post('/api/auth/signout', {});
+  } 
 };
