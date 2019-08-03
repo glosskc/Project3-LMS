@@ -138,15 +138,15 @@ class ClientForm extends Component {
           Client 
       </Typography>
         <Grid container spacing={3}>
-          <Grid item xs={12} sm={6}>
+          <Grid item xs={12}>
             <TextField
               onChange={this.propshandleInputChange}
               required
+              fullWidth
               value={this.props.clientName}
               id="clientName"
               name="clientName"
               label="Client name"
-              fullWidth
               autoComplete="fname"
             />
           </Grid>
