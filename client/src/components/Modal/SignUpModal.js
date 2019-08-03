@@ -47,13 +47,13 @@ class SignUpModal extends Component {
     console.log(user);
     
     API.signUp(user).then(res => {
-      // console.log("this: " + res);
+      console.log("this: " + res);
       this.setState({ 
         username: '',
           password: '',
           open:false});
           
-          this.props.history.push('/app/dashboard');
+          this.props.history.push(`/app/dashboard`);
     })
     
   };
