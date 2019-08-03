@@ -278,7 +278,7 @@ class MainCalendar extends React.PureComponent {
       confirmationVisible: false,
       editingFormVisible: false,
       deletedAppointmentId: undefined,
-      editingAppointmentId: undefined,
+      editingAppointmentId: false,
       addedAppointment: {},
       startDayHour: 9,
       endDayHour: 22,
@@ -417,7 +417,7 @@ class MainCalendar extends React.PureComponent {
       }
       if (changed) {
         console.log(changed);
-        // this.changeAppt(Object.values(changed).pop());
+        this.changeAppt(Object.values(changed).pop());
         data = data.map(appointment => (
           changed[appointment.id] ? { ...appointment, ...changed[appointment.id] } : appointment));
       }
@@ -537,4 +537,5 @@ class MainCalendar extends React.PureComponent {
     );
   }
 }
+
 export default withStyles(styles, { name: 'EditingDemo' })(MainCalendar);

@@ -37,7 +37,7 @@ app.use(routes);
 
 // Connect to the Mongo DB
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/LMS")
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/CRM")
   .then(() => console.log('Connection is successul!'))
   .catch((err) => console.log(err));
 
