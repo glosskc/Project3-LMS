@@ -147,7 +147,7 @@ class ClientServices extends Component {
   }
 
   handleNext(event) {
-    if (this.state.activeStep===3){
+    if (this.state.activeStep===4){
       this.handleFormSubmit(event)
       return;
     }
