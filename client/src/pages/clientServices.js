@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+// import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Paper from '@material-ui/core/Paper';
 import Stepper from '@material-ui/core/Stepper';
@@ -15,7 +15,7 @@ import { withStyles } from '@material-ui/core/styles';
 import API from '../utils/API'
 
 
-const useStyles = makeStyles(theme => ({
+const useStyles = theme => ({
   appBar: {
     position: 'relative',
   },
@@ -53,7 +53,7 @@ const useStyles = makeStyles(theme => ({
     marginTop: theme.spacing(3),
     marginLeft: theme.spacing(1),
   },
-}));
+});
 
 const steps = ['Client', 'Task', 'Payment', 'Review'];
 
