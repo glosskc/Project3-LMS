@@ -13,7 +13,7 @@ import {
 
 export default function DateTimePickers() {
 
-  const [selectedDate, setSelectedDate] = React.useState(new Date('2019-07-27T21:11:54'));
+  const [selectedDate, setSelectedDate] = React.useState(new Date('2019-08-03T10:00:00'));
   function handleDateChange(date) {
     setSelectedDate(date);
   }
@@ -22,6 +22,7 @@ export default function DateTimePickers() {
       <Grid container  justify="space-around">
         <KeyboardDatePicker
           margin="normal"
+          fullWidth
           id="mui-pickers-date"
           name="datePicked"
           label="Date picker"
@@ -33,6 +34,7 @@ export default function DateTimePickers() {
         />
         <KeyboardTimePicker
           margin="normal"
+          fullWidth
           id="mui-pickers-time"
           name="timePicked"
           label="Time picker"
