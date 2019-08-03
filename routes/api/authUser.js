@@ -11,11 +11,8 @@ router.post('/signup', auth.register);
 router.post('/signout', auth.logout);
 
 router
-// .post('/',
-//     passport.authenticate('local', { successRedirect: '/app/dashboard', failureRedirect: '/', failureFlash: true })
-// )
     .use('/signin', passport.authenticate('local'))
     .route('/signin')
-    .post(auth.register);
+    .post(auth.login);
 
 module.exports = router;
